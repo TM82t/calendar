@@ -14,13 +14,15 @@ class EventsController < ApplicationController
 
   def create
     Event.create(event_parameter)
+    flash[:notice] = "投稿に成功しました"
     redirect_to events_path
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_path, notice: "削除しました"
+    flash[:alert] = "投稿削除しました"
+    redirect_to events_path
   end
 
   def edit
@@ -30,7 +32,8 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_parameter)
-      redirect_to events_path, notice: "編集しました"
+      flash[:notice] = "投稿を編集しました。"
+      redirect_to events_path
     else
       render 'edit'
     end
