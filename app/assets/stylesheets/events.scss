@@ -1,3 +1,44 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.top {
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+
+.table {
+    width: 100%;
+    margin-bottom: 1px;
+    color: #212529;
+}
+
+.table td, .table th {
+    padding: 1px;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
+}
