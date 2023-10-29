@@ -1,20 +1,32 @@
-<div class="show">
-  <p>
-    <strong>タイトル</strong>
-    <%= @event.title %>
-  </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <h3>予定</h3>
+    </div>
 
-  <p>
-    <strong>内容</strong>
-    <%= @event.content %>
-  </p>
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th>日程</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
-  <p>
-    <strong>日時</strong>
-    <%= @event.start_time.strftime("%m-%d") %>
-  </p>
+        <tbody>
+          <tr>
+            <td><%= @event.title %></td>
+            <td><%= @event.start_time.strftime("%m-%d") %></td>
+            <td><%= link_to '編集', edit_event_path(@event), class: "btn btn-sm btn-success" %></td>
+            <td><%= link_to '消去', event_path(@event.id), method: :delete, class: "btn btn-sm btn-danger", "data-confirm" => "本当によろしいですか?" %></td>
+          </tr>
+          </tbody>
+        </table>
 
-  <%= link_to '編集', edit_event_path(@event) %>
-  <%= link_to '消去', event_path(@event.id), method: :delete, data: { confirm: '本当によろしいですか?' } %>
-  <%= link_to '戻る', events_path %>
+      <%= link_to '戻る', events_path %>
+
+    </div>
+  </div>
 </div>

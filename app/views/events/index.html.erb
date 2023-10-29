@@ -1,7 +1,7 @@
 <div class="container">
   <div class="toppage">
     <h1 class="top">カレンダー</h1>
-    <br>
+    </br>
 
     <div class="row">
       <div class="col-md-4">
@@ -21,13 +21,16 @@
           <tbody>
             <% @events.each do |event| %>
               <tr>
+                <td></td>
                 <td><%= link_to event.title , event %></td>
                 <td><%= event.start_time.strftime("%m-%d") %></td>
+                <td></td>
               </tr>
             <% end %>
           </tbody>
         </table>
 
+        </br>
 
         <%= form_with(model: @event, local: true) do |form| %>
           <div class="title">
@@ -57,7 +60,7 @@
         <% end %>
       </div>
 
-      <br>
+      </br>
 
 
       <br>
